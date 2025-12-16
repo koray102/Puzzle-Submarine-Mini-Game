@@ -873,7 +873,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1803616545}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_MethodName: LoadSceneInstantly
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1144,7 +1144,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1803616545}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_MethodName: LoadSceneInstantly
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

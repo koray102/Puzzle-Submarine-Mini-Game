@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -37,18 +38,25 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void LoadScene(string sceneName, float delayTime = 0)
+    public void LoadScene(string sceneName, float delayTime)
     {
         StartCoroutine(LoadSceneDelayed(sceneName, delayTime));
     }
+
+    
+    public void LoadSceneInstantly(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
 
     private IEnumerator LoadSceneDelayed(string sceneName, float delayTime)
     {
         yield return new WaitForSeconds(delayTime);
 
-        // Süre bitince sahneyi yükler
         SceneManager.LoadScene(sceneName);
     }
+
 
     public void RestartLevel()
     {
