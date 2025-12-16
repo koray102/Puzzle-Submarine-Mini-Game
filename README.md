@@ -1,4 +1,5 @@
 # 🎮 Puzzle-Submarine-Mini-Game - Unity Mini-Game Collection
+## Unity Version: 6000.0.61f1
 
 ## [ENG]
 > A scalable Unity game project gathering diverse game mechanics and technical architectures under a single roof.
