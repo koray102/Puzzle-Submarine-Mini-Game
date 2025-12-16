@@ -31,7 +31,7 @@ public class SubmarineController : MonoBehaviour
 
     void Update()
     {
-        if(SubmarineManager.Instance.isGameDone)
+        if(SubmarineManager.Instance.isChestsDone)
             return;
 
         // Movement ve donus kismi

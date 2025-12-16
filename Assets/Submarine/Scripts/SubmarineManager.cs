@@ -7,7 +7,7 @@ public class SubmarineManager : MonoBehaviour
     [SerializeField] private GameObject QuestionUI;
 
     //
-    internal bool isGameDone;
+    internal bool isChestsDone;
     private int openedChestAmount;
 
     public static SubmarineManager Instance;
@@ -25,22 +25,27 @@ public class SubmarineManager : MonoBehaviour
     }
 
 
-    void Start()
-    {
-        
-    }
-
-
     public void CheckIsGameDone()
     {
         openedChestAmount++;
 
         if(openedChestAmount >= desiaredChestAmount)
         {
-            isGameDone = true;
+            isChestsDone = true;
             
             QuestionManager.Instance.SetUpNewQuestion();
             QuestionUI.SetActive(true);
         }
+    }
+
+
+    public void TurnToMain()
+    {
+        GameManager.Instance.LoadScene("Main Menu");
+    }
+
+    public void RestartSubmarine()
+    {
+        GameManager.Instance.RestartLevel();
     }
 }

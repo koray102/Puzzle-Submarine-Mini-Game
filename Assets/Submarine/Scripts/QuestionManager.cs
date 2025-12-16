@@ -5,6 +5,7 @@ using UnityEngine;
 public class QuestionManager : MonoBehaviour
 {
     [SerializeField] private QuestionData[] questons;
+    [SerializeField] private float waitBeforeEnd;
 
     [Header("UI Settings")]
     [SerializeField] private GameObject QuestionUI;
@@ -13,10 +14,12 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] private GameObject option2;
     [SerializeField] private GameObject option3;
     [SerializeField] private GameObject congratsText;
+    [SerializeField] private GameObject inciText;
 
 
     private int currentQuestionIndex;
     private int correctAnswerCount;
+    private int inciCount = 0;
 
     public static QuestionManager Instance;
 
@@ -56,6 +59,8 @@ public class QuestionManager : MonoBehaviour
         {
             Debug.Log("Correct Answer");
             correctAnswerCount++;
+            inciCount++;
+            inciText.GetComponent<TextMeshProUGUI>().text = $"Inci sayisi: {inciCount}";
         }else
         {
             Debug.Log("Wrong Answer");
@@ -82,5 +87,7 @@ public class QuestionManager : MonoBehaviour
         }
 
         congratsText.SetActive(true);
+
+        GameManager.Instance.LoadScene("Main Menu", waitBeforeEnd);
     }
 }

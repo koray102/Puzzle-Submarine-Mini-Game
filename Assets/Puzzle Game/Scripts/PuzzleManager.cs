@@ -13,6 +13,7 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField] private List<Transform> spawnPositions = new List<Transform>();
     [Tooltip("Bu normalde kod icinden kendisi otomatik degisiyor ama spesifik bir fotoya bakmak icin bu sekilde ayarladim")]
     [SerializeField] private int currentLvlIndex;
+    [SerializeField] private float waitBeforeEnd;
 
 
     [Header("Next Puzzle Creation Settings")]
@@ -87,6 +88,8 @@ public class PuzzleManager : MonoBehaviour
         {
             Destroy(puzzlePiece);
         }
+
+        puzzlePieces.Clear();
     }
 
 
@@ -94,10 +97,10 @@ public class PuzzleManager : MonoBehaviour
     {
         currentLvlIndex++;
 
-        // Son puzzleye ulastiginda hata vermek yerine basa atmasi icin
+        // Son puzzleye ulastiginda bitti demektir
         if(currentLvlIndex >= allLevelsImages.Count())
         {
-            currentLvlIndex = 0;
+            GameManager.Instance.LoadScene("Main Menu", waitBeforeEnd);;
         }
 
         yield return new WaitForSeconds(waitDur);
@@ -125,8 +128,25 @@ public class PuzzleManager : MonoBehaviour
 
             PuzzleUIManager.Instance.ShowUpCongratMessage(congratsMessageTargetAlpha, congratsMessagedDuration);
 
+            foreach (GameObject puzzlePiece in puzzlePieces)
+            {
+                puzzlePiece.GetComponent<PuzzlePiece>().StartCelebration(timeToWaitForNext);
+            }
+
             // onceki puzzleden kalan artiklari temizleyip yeni puzzleyi olusturuyo
             StartCoroutine(CreateNextPuzzle(timeToWaitForNext));
         }
+    }
+
+
+    public void TurnToMain()
+    {
+        GameManager.Instance.LoadScene("Main Menu");
+    }
+
+
+    public void RestartPuzzle()
+    {
+        GameManager.Instance.RestartLevel();
     }
 }

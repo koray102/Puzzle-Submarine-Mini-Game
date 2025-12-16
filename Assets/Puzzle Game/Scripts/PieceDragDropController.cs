@@ -32,6 +32,9 @@ public class PieceDragDropController : MonoBehaviour
             }
         }
 
+        if(selectedPiece && selectedPiece.isLocked)
+            return;
+
         // 2. Mouse Basılı Tutulduğu Sürece (Sürükleme)
         if (selectedPiece != null && Input.GetMouseButton(0))
         {

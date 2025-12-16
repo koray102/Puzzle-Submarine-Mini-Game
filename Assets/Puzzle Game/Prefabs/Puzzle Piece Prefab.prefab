@@ -123,3 +123,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   returnSpeed: 10
   snapThreshold: 0.5
+  hoverScaleAmount: 1.1
+  lerpSpeed: 10
