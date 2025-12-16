@@ -13,6 +13,7 @@ This project features two distinct mini-games with unique mechanics and technica
 A version of the classic jigsaw mechanic enhanced with "Game Feel" elements.
 * **Mechanic:** Pieces are moved via Drag & Drop and automatically snap into place when correctly positioned.
 * **Key Features:**
+    * **Dynamic Image Slicing:** No manual setup is required for custom images; the system automatically slices and generates pieces based on the specified grid size.
     * **Hover Effects:** Smooth scale up/down effects using `Lerp` when hovering over pieces with the mouse.
     * **Procedural Celebration:** When the puzzle is completed, pieces vibrate organically using `Sinus` (Sine wave) to create a celebration effect.
 
@@ -65,8 +66,9 @@ Bu proje, oyuncunun **Ana Menü (Hub)** üzerinden erişebildiği, birbirinden f
 Klasik yapboz mekaniğinin "Game Feel" (Oyun Hissi) öğeleriyle güçlendirilmiş versiyonudur.
 * **Mekanik:** Parçalar sürükle-bırak (Drag & Drop) yöntemiyle taşınır ve doğru yere gelince otomatik kilitlenir.
 * **Öne Çıkan Özellikler:**
-    * **Hover Efektleri:** Mouse ile parça üzerine gelindiğinde `Lerp` kullanılarak yumuşak büyüme/küçülme efektleri.
+    * **Dynamic Slicing:** İstenilen resim eklendiğinde ekstra ayar gerekmez; sistem, görseli belirlenen parça sayısına göre otomatik olarak böler ve hazırlar.
     * **Procedural Celebration:** Puzzle tamamlandığında parçalar `Sinus` kullanılarak organik bir şekilde titreyerek kutlama efekti oluşturur.
+    * **Hover Efektleri:** Mouse ile parça üzerine gelindiğinde `Lerp` kullanılarak yumuşak büyüme/küçülme efektleri.
 
 ### 2. Submarine Explorer & Quiz (Fizik & Keşif)
 Fizik tabanlı bir keşif oyunu ile bilgi yarışması mekaniğinin hibrit birleşimidir.
